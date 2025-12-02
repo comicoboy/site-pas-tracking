@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quantification du Pas et Self-Tracking</title>
+    
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&family=Open+Sans&display=swap" rel="stylesheet">
+    
+    <style>
+        /* --- 0. Reset & base --- */
+        * { margin:0; padding:0; box-sizing:border-box; }
+        body { font-family: 'Open Sans', sans-serif; color:#212F3C; background:#F2F3F4; line-height:1.6; }
+        h1,h2,h3 { font-family: 'Montserrat', sans-serif; font-weight:700; color:#212F3C; margin-bottom:0.5em; }
+        h2 { font-size:28px; }
+        h3 { font-size:22px; }
+        p { margin-bottom:1em; }
+
+        /* --- 1. Header / Menu --- */
+        header { position:fixed; top:0; width:100%; background:#5DADE2; color:white; padding:1em; z-index:100; }
+        nav a { color:white; margin-right:1.5em; text-decoration:none; font-weight:600; }
+        nav a:hover { text-decoration:underline; }
+
+        /* --- 2. Section --- */
+        section { padding:100px 10% 100px 10%; min-height:100vh; }
+        section:nth-child(even) { background:#F2F3F4; }
+        section:nth-child(odd) { background:white; }
+
+        /* --- 3. Capsules narratives --- */
+        .capsule { background:#58D68D; color:white; padding:20px; margin:20px 0; border-radius:10px; font-style:italic; position:relative; animation:fadeIn 1s ease-in-out; }
+        @keyframes fadeIn { from {opacity:0; transform:translateY(20px);} to {opacity:1; transform:translateY(0);} }
+
+        /* --- 4. Visual placeholders --- */
+        .visual { width:100%; height:300px; background:#D5DBDB; border-radius:10px; display:flex; justify-content:center; align-items:center; color:#212F3C; font-weight:700; margin:20px 0; }
+
+        /* --- 5. Footer --- */
+        footer { background:#212F3C; color:white; text-align:center; padding:2em; }
+
+        /* --- 6. Responsive --- */
+        @media(max-width:768px){ 
+            section { padding:80px 5%; } 
+            nav a { display:block; margin-bottom:0.5em; } 
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <nav>
+        <a href="#accueil">Accueil</a>
+        <a href="#dispositif">NHANES</a>
+        <a href="#algorithmes">Algorithmes</a>
+        <a href="#usages">Usages</a>
+        <a href="#limites">Limites</a>
+        <a href="#realites">Réalités</a>
+        <a href="#discussion">Discussion</a>
+        <a href="#ressources">Ressources</a>
+    </nav>
+</header>
+
+<section id="accueil">
+    <h1>Le pas : norme, donnée et contrôle</h1>
+    <p>Bienvenue dans notre étude sur la quantification des pas par les objets connectés. Ce projet explore comment la donnée du pas, devenue norme de santé via les algorithmes et le marketing, façonne notre relation au corps et génère des logiques économiques et sociales invisibles.</p>
+    <div class="capsule">“Chaque matin, Claire, 45 ans, regarde son Apple Watch. Ses 10 000 pas semblent simples à atteindre… mais son corps la trahit. La montre ignore ses pauses, sa fatigue, et lui renvoie un verdict : insuffisant.”</div>
+    <div class="visual">Visuel : Montre connectée & anneau d’activité</div>
+</section>
+
+<section id="dispositif">
+    <h2>Qui mesure et pourquoi ?</h2>
+    <p>NHANES (National Health and Nutrition Examination Survey) est un programme américain mené par le CDC. Initialement conçu pour surveiller l’état de santé de la population, il utilise des accéléromètres pour quantifier l’activité physique.</p>
+    <ul>
+        <li>Étudier les tendances épidémiologiques</li>
+        <li>Informer les politiques publiques</li>
+        <li>Produire des normes de santé</li>
+    </ul>
+    <div class="capsule">“En laboratoire, des participants marchent sur tapis. Leurs mouvements deviennent des chiffres, puis des graphiques. Mais qui a décidé que cette foulée “standard” représenterait tout le monde ?”</div>
+    <div class="visual">Graphique animé : transformation mouvement → données</div>
+</section>
+
+<section id="algorithmes">
+    <h2>Comment les pas sont comptés ?</h2>
+    <p>Les données brutes des accéléromètres sont transformées par 6 algorithmes différents (5 open-source, 1 propriétaire – ActiLife). Chacun produit des mesures légèrement différentes.</p>
+    <ul>
+        <li>Calibration sur corps jeunes, valides, masculins</li>
+        <li>“Pas valide” = pas détecté sur un corps atypique</li>
+        <li>Seuils binaires : actif / sédentaire</li>
+    </ul>
+    <div class="capsule">“Mathieu, 70 ans, marche avec effort. La montre détecte moins de pas que ses jambes ne le font. Ses efforts disparaissent dans le flux numérique.”</div>
+    <div class="visual">Schéma comparatif des algorithmes appliqués aux mêmes données</div>
+</section>
+
+<section id="usages">
+    <h2>Entre motivation et pression sociale</h2>
+    <p>Les données du pas sont utilisées dans trois sphères : Science, Industrie, Quotidien. Elles influencent comportements, normes et marchés.</p>
+    <ul>
+        <li>Claire (45 ans) : culpabilisation, effet âge, intériorisation de la norme</li>
+        <li>Nathalie Paquet (CEO) : justification business, monétisation, biais conscients</li>
+        <li>Dr. X (chercheur) : critique socio-technique, gouvernementalité, performativité du chiffre</li>
+    </ul>
+    <div class="capsule">“Chaque pas devient un verdict, une monnaie invisible, un signal pour l’algorithme, le marketing et toi-même.”</div>
+    <div class="visual">Bandeau interactif : profils & verbatims</div>
+</section>
+
+<section id="limites">
+    <h2>Ce que la donnée ne dit pas</h2>
+    <ul>
+        <li>Biais méthodologiques : incohérence entre algorithmes</li>
+        <li>Biais corporels : âge, genre, handicap</li>
+        <li>Effets sociaux : culpabilisation, individualisation de la santé</li>
+        <li>Effets économiques : captation de valeur, priorisation des jeunes actifs</li>
+    </ul>
+    <div class="capsule">“Claire marche plus que jamais, mais ses pas ne comptent pas autant que ceux de ses collègues plus jeunes. La norme est codée, pas vécue.”</div>
+    <div class="visual">Infographie : sur- & sous-estimation selon âge/genre</div>
+</section>
+
+<section id="realites">
+    <h2>De la mesure à la norme</h2>
+    <p>La donnée du pas représente une abstraction du corps : jeune, performant et régulier. Les corps réels, variés et irréguliers, sont invisibilisés.</p>
+    <div class="capsule">“Le chiffre ne connaît pas la douleur, la fatigue, ni les contextes sociaux. Il connaît seulement la norme codée.”</div>
+    <div class="visual">Animation : corps variés → chiffres uniformisés</div>
+</section>
+
+<section id="discussion">
+    <h2>Quelles leçons tirer ?</h2>
+    <ul>
+        <li>La donnée du pas fabrique une norme sociale et économique</li>
+        <li>Effets : auto-surveillance, marchandisation du corps, hiérarchisation sociale</li>
+        <li>Théories mobilisées : Foucault, Lupton, Ruckenstein, Crawford, Schüll</li>
+    </ul>
+    <div class="capsule">“Le corps devient performatif pour l’algorithme. Mais et si on redéfinissait la santé pour tous les corps, pas pour un chiffre ?”</div>
+    <div class="visual">Schéma synthétique : algorithme → corps → société</div>
+</section>
+
+<section id="ressources">
+    <h2>Ressources et bibliographie</h2>
+    <ul>
+        <li>NHANES – CDC</li>
+        <li>Publications académiques sur self-tracking et activité physique</li>
+        <li>Déborah Lupton, Minna Ruckenstein, Kate Crawford</li>
+        <li>Articles et analyses sur la quantification du corps</li>
+    </ul>
+    <div class="visual">Encadré interactif : liens externes cliquables</div>
+</section>
+
+<footer>
+    &copy; 2025 – Étude sur le self-tracking et quantification du pas | Crédits : Étudiantes de Sciences Po
+</footer>
+
+</body>
+</html>
