@@ -3,73 +3,172 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Quantification du Pas et Self-Tracking</title>
+    <title>Le Pas : Charte Graphique et UX - Norme, Donnée et Contrôle</title>
     
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&family=Open+Sans&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600;700&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
     
     <style>
-        /* --- 0. Reset & base (CORRIGÉ ICI) --- */
+        /* --- 0. Reset & base --- */
         * { margin:0; padding:0; box-sizing:border-box; }
         
-        /* CORRECTION MAJEURE: Permet un défilement fluide et empêche le header fixe de cacher les titres */
+        /* UX : Navigation fluide & gestion du header fixe */
         html {
             scroll-behavior: smooth;
-            scroll-padding-top: 80px; /* Décalage de 80px pour laisser l'espace au menu */
+            scroll-padding-top: 80px; /* Décalage pour le menu fixe */
         }
 
-        body { font-family: 'Open Sans', sans-serif; color:#212F3C; background:#F2F3F4; line-height:1.6; }
-        h1,h2,h3 { font-family: 'Montserrat', sans-serif; font-weight:700; color:#212F3C; margin-bottom:0.5em; }
-        h2 { font-size:28px; }
-        h3 { font-size:22px; }
+        /* Charte graphique : Couleurs & Typographie */
+        body { 
+            font-family: 'Open Sans', sans-serif; 
+            color:#212F3C; /* Texte principal */
+            background:#F2F3F4; /* Fond neutre */
+            line-height:1.6; 
+            font-size: 16px; /* Texte courant */
+        }
+        
+        /* Typographie : Titres */
+        h1,h2 { 
+            font-family: 'Montserrat', sans-serif; 
+            font-weight:700; /* bold */
+            color:#212F3C; 
+            margin-bottom:0.8em; 
+        }
+        h1 { font-size:36px; } /* 28-36px */
+        
+        /* Typographie : Sous-titres */
+        h3 { 
+            font-family: 'Montserrat', sans-serif; 
+            font-weight:600; /* semi-bold */
+            font-size:24px; /* 18-24px */
+            color:#212F3C; 
+            margin-top:1.5em;
+            margin-bottom:0.5em; 
+        }
         p { margin-bottom:1em; }
 
-        /* --- 1. Header / Menu (OPTIMISÉ) --- */
+        /* --- 1. Header / Menu (UX : Menu fixe en haut) --- */
         header { 
             position:fixed; 
             top:0; 
             width:100%; 
-            background:#5DADE2; 
+            background:#5DADE2; /* Bleu clair : confiance, technologie */
             color:white; 
-            padding: 0 1em; /* Marge horizontale, la hauteur est gérée par height */
-            height: 70px; /* Hauteur fixe pour une meilleure cohérence */
+            padding: 0 10%; 
+            height: 70px; 
             z-index:100; 
-            
-            /* Centrage vertical du menu */
             display: flex;
             align-items: center;
         }
-        nav a { color:white; margin-right:1.5em; text-decoration:none; font-weight:600; }
+        nav { overflow-x: auto; white-space: nowrap; } /* Gestion du débordement sur petit écran */
+        nav a { 
+            color:white; 
+            margin-right:1.5em; 
+            text-decoration:none; 
+            font-weight:600; 
+            padding: 5px 0;
+            display: inline-block;
+        }
         nav a:hover { text-decoration:underline; }
 
-        /* --- 2. Section (OPTIMISÉ) --- */
-        /* Réduction du padding-top car scroll-padding-top le gère désormais */
-        section { padding:40px 10% 100px 10%; min-height:100vh; } 
+        /* --- 2. Section (UX : chaque page = section scrollable) --- */
+        section { 
+            padding:40px 10% 80px 10%; 
+            min-height:100vh; 
+            padding-top: 100px; /* Pour compenser le header fixe */
+        } 
+        /* Charte graphique : Alternance des fonds pour la lisibilité */
         section:nth-child(even) { background:#F2F3F4; }
         section:nth-child(odd) { background:white; }
-
-        /* --- 3. Capsules narratives --- */
-        .capsule { background:#58D68D; color:white; padding:20px; margin:20px 0; border-radius:10px; font-style:italic; position:relative; animation:fadeIn 1s ease-in-out; }
-        @keyframes fadeIn { from {opacity:0; transform:translateY(20px);} to {opacity:1; transform:translateY(0);} }
-
-        /* --- 4. Visual placeholders & Images --- */
-        .visual { width:100%; height:300px; background:#D5DBDB; border-radius:10px; display:flex; justify-content:center; align-items:center; color:#212F3C; font-weight:700; margin:20px 0; }
         
-        .visual img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            border-radius: 10px;
-            display: block;
+        /* Styles pour les interludes (citations, verbatims) */
+        .interlude {
+            margin: 2em 0;
+            padding: 1.5em;
+            background: #5DADE2; /* Bleu clair */
+            color: white;
+            border-left: 5px solid #58D68D; /* Vert pastel */
+            font-style: italic;
+            font-weight: 600;
         }
 
-        /* --- 5. Footer --- */
-        footer { background:#212F3C; color:white; text-align:center; padding:2em; }
+        /* --- 3. Capsules narratives (UX : Capsules narratives) --- */
+        .capsule { 
+            background:#58D68D; /* Vert pastel : bien-être, encouragement */
+            color:white; 
+            padding:25px; 
+            margin:20px 0; 
+            border-radius:10px; 
+            font-style:italic; 
+            position:relative; 
+            font-weight: 600;
+        }
 
-        /* --- 6. Responsive (OPTIMISÉ) --- */
+        /* --- 4. Visual placeholders & Images (UX : Encarts visuels) --- */
+        .visual { 
+            width:100%; 
+            min-height:300px; 
+            background:rgba(93, 173, 226, 0.1); /* Fond très léger de bleu */
+            border: 1px solid #5DADE2;
+            border-radius:10px; 
+            display:flex; 
+            flex-direction: column;
+            justify-content:center; 
+            align-items:center; 
+            color:#212F3C; 
+            font-weight:700; 
+            margin:20px 0; 
+            padding: 15px;
+            text-align: center;
+        }
+        
+        .visual img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 8px;
+            margin-bottom: 10px;
+        }
+        
+        /* Styles pour les boutons Précédent/Suivant */
+        .navigation {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 40px;
+            padding-top: 20px;
+            border-top: 1px solid #ccc;
+        }
+        .navigation a {
+            background-color: #5DADE2;
+            color: white;
+            padding: 10px 20px;
+            text-decoration: none;
+            border-radius: 5px;
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 600;
+        }
+        .navigation a:hover {
+            background-color: #4a9ad0;
+        }
+        
+        /* Mise en forme des listes spécifiques */
+        ul { margin-left: 20px; margin-bottom: 1em; }
+        li { margin-bottom: 0.5em; }
+
+        /* --- 5. Footer --- */
+        footer { 
+            background:#212F3C; /* Noir/gris foncé */
+            color:white; 
+            text-align:center; 
+            padding:2em; 
+        }
+
+        /* --- 6. Responsive --- */
         @media(max-width:768px){ 
-            section { padding:80px 5%; } 
-            nav a { display:block; margin-bottom:0.5em; }
-            header { height: auto; display: block; padding: 1em; } /* S'adapte mieux sur mobile */
+            header { height: auto; padding: 1em 5%; }
+            nav { display: block; }
+            nav a { margin-right: 0.5em; margin-bottom: 0.5em; font-size: 14px; }
+            section { padding:80px 5%; padding-top: 100px; } 
+            h1 { font-size: 30px; }
+            h3 { font-size: 20px; }
         }
     </style>
 </head>
@@ -77,105 +176,375 @@
 
 <header>
     <nav>
-        <a href="#accueil">Accueil</a>
-        <a href="#dispositif">NHANES</a>
-        <a href="#algorithmes">Algorithmes</a>
-        <a href="#usages">Usages</a>
-        <a href="#limites">Limites</a>
-        <a href="#realites">Réalités</a>
-        <a href="#discussion">Discussion</a>
-        <a href="#ressources">Ressources</a>
+        <a href="#section1">Accueil</a>
+        <a href="#section2">Dispositif NHANES</a>
+        <a href="#section3">Algorithmes & Catégories</a>
+        <a href="#section4">Usages & Entretiens</a>
+        <a href="#section5">Limites & Critiques</a>
+        <a href="#section6">Discussion</a>
+        <a href="#section7">Résister</a>
+        <a href="#section8">Leçons</a>
     </nav>
 </header>
 
-<section id="accueil">
-    <h1>Le pas : norme, donnée et contrôle</h1>
-    <p>Bienvenue dans notre étude sur la quantification des pas par les objets connectés. Ce projet explore comment la donnée du pas, devenue norme de santé via les algorithmes et le marketing, façonne notre relation au corps et génère des logiques économiques et sociales invisibles.</p>
-    <div class="capsule">“Chaque matin, Claire, 45 ans, regarde son Apple Watch. Ses 10 000 pas semblent simples à atteindre… mais son corps la trahit. La montre ignore ses pauses, sa fatigue, et lui renvoie un verdict : insuffisant.”</div>
+<main>
+
+<section id="section1">
+    <h2>Le pas : norme, donnée et contrôle</h2>
+    <p>Bienvenue dans notre étude sur la quantification des pas par les objets connectés. Ce projet explore comment la donnée du pas, érigée en norme de santé par l'algorithme et le marketing, fonde-t-elle un système de self-tracking qui, sous couvert d'optimisation individuelle, monétise le corps et renforce le contrôle social.</p>
+
+    <div class="capsule">
+        “Chaque matin, Véronique, 55 ans, regarde son Apple Watch. Ses 10 000 pas semblent simples à atteindre… mais son corps la trahit. La montre ignore ses pauses, sa fatigue, et lui renvoie un verdict : insuffisant.”
+    </div>
+
     <div class="visual">
-        <img src="photo1.png" alt="Montre connectée et anneau d'activité">
+        <img src="image_montre_connectee.png" alt="Image stylisée d’une montre connectée avec un anneau d’activité à moitié rempli.">
+        <p>Image stylisée d’une montre connectée avec un anneau d’activité à moitié rempli.</p>
+    </div>
+    
+    <div class="visual">
+        <img src="photo1.png" alt="Photo1 : Illustration de la quantification des corps.">
+        <p>Photo1 : Illustration de la quantification des corps (placeholder).</p>
+    </div>
+
+    <p>Depuis une dizaine d’années, la quantification des corps s’est imposée comme une pratique quotidienne pour une part croissante de la population. Déjà en 2019, 4 Français sur 10 déclaraient “utiliser des objets connectés ou des applications dans le cadre de leurs activités sportives”, signe d’un marché en pleine expansion. [...] Cette prolifération s’accompagne d’un discours puissant : “s’entraîner comme un pro”, optimiser sa forme, prévenir les risques, devenir acteur de sa santé. Le marché mondial des applications de santé, estimé à “12,4 milliards de dollars en 2018 et annoncé à plus de 200 milliards en 2026”, s’appuie sur ces promesses.</p>
+    
+    <p>Pourtant, cette dynamique soulève une tension centrale. En rendant visibles et quantifiables des pans entiers de nos activités, les technologies portables n’offrent pas seulement de nouvelles ressources pour “mieux vivre”, elles redéfinissent aussi ce que signifie être en bonne santé, actif, performant. Le suivi quotidien des pas, devenu une métrique emblématique, illustre cette ambivalence : instrument d’autonomisation pour certains, il peut aussi produire des normes implicites, une pression à l’auto-surveillance, voire une nouvelle forme de gouvernement des conduites.</p>
+    
+    <h3>Le dispositif NHANES</h3>
+    <p>Notre étude s’appuie sur un jeu de données issu de NHANES (National Health and Nutrition Examination Survey), un programme mené par les Centers for Disease Control and Prevention (CDC) aux États-Unis depuis la fin des années 1950. [...] Dans les cycles 2011‑2012 et 2013‑2014, NHANES a intégré la collecte d’accéléromètres portés par les participants, afin de mesurer leur activité physique de manière objective.</p>
+    
+    <div class="navigation">
+        <span></span>
+        <a href="#section2">Suivant : Dispositif NHANES & Histoire du corps</a>
     </div>
 </section>
 
-<section id="dispositif">
-    <h2>Qui mesure et pourquoi ?</h2>
+<section id="section2">
+    <h2>L’histoire et les acteurs de la quantification du corps</h2>
+    
+    <h3>Le dispositif NHANES : Qui mesure et pourquoi ?</h3>
     <p>NHANES (National Health and Nutrition Examination Survey) est un programme américain mené par le CDC. Initialement conçu pour surveiller l’état de santé de la population, il utilise des accéléromètres pour quantifier l’activité physique.</p>
+    
     <ul>
-        <li>Étudier les tendances épidémiologiques</li>
-        <li>Informer les politiques publiques</li>
-        <li>Produire des normes de santé</li>
+        <li><strong>Objectifs clés :</strong> Étudier les tendances épidémiologiques, informer les politiques publiques, produire des normes de santé.</li>
     </ul>
-    <div class="capsule">“En laboratoire, des participants marchent sur tapis. Leurs mouvements deviennent des chiffres, puis des graphiques. Mais qui a décidé que cette foulée “standard” représenterait tout le monde ?”</div>
-    <div class="visual">Graphique animé : transformation mouvement → données</div>
+
+    <div class="capsule">
+        “En laboratoire, des participants marchent sur tapis. Leurs mouvements deviennent des chiffres, puis des graphiques. Mais qui a décidé que cette foulée “standard” représenterait tout le monde ?”
+    </div>
+
+    <div class="visual">
+        <img src="photo2.png" alt="Photo2 : Graphique animé montrant un accéléromètre qui transforme la marche en données numériques.">
+        <p>Graphique animé : transformation accéléromètre → données numériques (placeholder).</p>
+    </div>
+    
+    <h3>1. Aux origines : Mesurer le monde (Antiquité - XIXe siècle)</h3>
+    <p>Aux origines, la quantification ne s'intéresse pas directement à l’individu : elle sert d’abord à mesurer le monde. L’odomètre inventé dans l’Antiquité ou le podomètre développé au XVIᵉ siècle étaient pensés pour géométriser le déplacement humain. [...] Le « pas d’un homme moyen » n’a rien à voir avec la santé : il sert uniquement à convertir la marche en distance mesurable. Le corps n’a alors pas d’identité propre : il n’est qu’un outil mécanique anonymisé.</p>
+    
+    <div class="visual">
+        <img src="photo3.png" alt="Photo3 : Illustration d’un podomètre ancien ou d’un odomètre.">
+        <p>Photo3 : Odomètre ou podomètre du XVIe siècle (placeholder).</p>
+    </div>
+
+    <h3>2. Le XIXe siècle : Discipliner le corps (Médecine et Hygiène)</h3>
+    <p>Cette logique change au XIXᵉ siècle lorsque la médecine s’empare de ces instruments de mesure. Le podomètre devient un support de rationalisation du corps : les médecins et hygiénistes l’utilisent pour organiser et contrôler l’activité physique des patients. Pour la première fois, la mesure sert à discipliner et réguler le corps humain.</p>
+    
+    <div class="visual">
+        <img src="photo4.png" alt="Photo4 : Illustration d’une scène médicale ou hygiéniste du XIXe siècle.">
+        <p>Photo4 : Usage médical du podomètre au XIXe siècle (placeholder).</p>
+    </div>
+    
+    <h3>3. Aujourd'hui : Le corps capital à optimiser (Quantified Self)</h3>
+    <p>La dernière transformation se produit dans nos sociétés contemporaines. Avec l’émergence du mouvement Quantified Self dans les années 1990, et la diffusion massive des objets connectés, chacun peut désormais mesurer son sommeil, ses pas, son rythme cardiaque... Le corps devient un capital à gérer, améliorer et optimiser. [...] En parallèle, la dimension sociale de ces données joue un rôle central. Les plateformes où l’on partage ses performances favorisent la comparaison, la valorisation des efforts et l’installation d’une dynamique de compétition continue.</p>
+    
+    <div class="visual">
+        <img src="photo5.png" alt="Photo5 : Illustration du mouvement Quantified Self.">
+        <p>Photo5 : Illustration des données et du partage social (placeholder).</p>
+    </div>
+
+    <div class="navigation">
+        <a href="#section1">Précédent : Le Pas & NHANES</a>
+        <a href="#section3">Suivant : Comment les pas sont comptés ?</a>
+    </div>
 </section>
 
-<section id="algorithmes">
-    <h2>Comment les pas sont comptés ?</h2>
+<section id="section3">
+    <h2>Comment les pas sont comptés ? Technologies, algorithmes et biais</h2>
     <p>Les données brutes des accéléromètres sont transformées par 6 algorithmes différents (5 open-source, 1 propriétaire – ActiLife). Chacun produit des mesures légèrement différentes.</p>
+
+    <div class="visual">
+        <img src="photo6.png" alt="Photo6 : Schéma de l’écosystème technique de comptage de pas.">
+        <p>Schéma de l’écosystème des technologies de comptage (capteurs, algorithmes, plateformes) (placeholder).</p>
+    </div>
+
+    <h3>Biais d’infrastructure et invisibilisation des corps</h3>
     <ul>
-        <li>Calibration sur corps jeunes, valides, masculins</li>
-        <li>“Pas valide” = pas détecté sur un corps atypique</li>
-        <li>Seuils binaires : actif / sédentaire</li>
+        <li><strong>Calibration sur corps jeunes, valides, masculins.</strong></li>
+        <li>Mesure dégradée avec âge, fatigue, handicap, invisibilisation des corps “non conformes”.</li>
     </ul>
-    <div class="capsule">“Mathieu, 70 ans, marche avec effort. La montre détecte moins de pas que ses jambes ne le font. Ses efforts disparaissent dans le flux numérique.”</div>
-    <div class="visual">Schéma comparatif des algorithmes appliqués aux mêmes données</div>
-</section>
+    
+    <p>En premier lieu, les capteurs (GPS, accéléromètre et gyroscope) produisent des mesures dont la précision dépend des conditions d’usage. Ils ne capturent pas la singularité de chaque corps, ce qui mène à une approximation fondée sur des seuils, des moyennes et des algorithmes d’interprétation. [...] Aimé Muhoza rappelle que la conception de ces dispositifs privilégie les corps jeunes et en bonne santé : “la plupart des dispositifs disponibles sur le marché sont conçus pour des personnes en bonne santé ou des athlètes”.</p>
 
-<section id="usages">
-    <h2>Entre motivation et pression sociale</h2>
-    <p>Les données du pas sont utilisées dans trois sphères : Science, Industrie, Quotidien. Elles influencent comportements, normes et marchés.</p>
+    <div class="visual">
+        <img src="photo7.png" alt="Photo7 : Exemple de publicité pour une montre connectée montrant explicitement un corps masculin et en bonne santé.">
+        <p>Publicité : montre connectée sur un corps masculin, jeune et en bonne santé (placeholder).</p>
+    </div>
+    
+    <div class="visual">
+        <img src="photo8.png" alt="Photo8 : Schéma illustrant la mesure des pas sur un corps "atypique" versus "normatif".">
+        <p>Schéma : comparaison de la détection des pas selon la morphologie ou l'âge (placeholder).</p>
+    </div>
+
+    <h3>Catégories statistiques et production d’identités corporelles</h3>
     <ul>
-        <li>Claire (45 ans) : culpabilisation, effet âge, intériorisation de la norme</li>
-        <li>Nathalie Paquet (CEO) : justification business, monétisation, biais conscients</li>
-        <li>Dr. X (chercheur) : critique socio-technique, gouvernementalité, performativité du chiffre</li>
+        <li>Seuils binaires : actif / sédentaire ; seuils d’intensité.</li>
+        <li>Production socio-statistique d’identités corporelles.</li>
     </ul>
-    <div class="capsule">“Chaque pas devient un verdict, une monnaie invisible, un signal pour l’algorithme, le marketing et toi-même.”</div>
-    <div class="visual">Bandeau interactif : profils & verbatims</div>
+
+    <div class="capsule">
+        “Mathieu, 70 ans, marche avec effort. La montre détecte moins de pas que ses jambes ne le font. Ses efforts disparaissent dans le flux numérique.”
+    </div>
+
+    <div class="visual">
+        
+        <p>Schéma comparatif des algorithmes ActiGraph appliqués aux mêmes données brutes NHANES.</p>
+    </div>
+    
+    <div class="visual">
+        <img src="photo9.png" alt="Photo9 : Illustration du biais d’infrastructure.">
+        <p>Photo9 : Illustration des biais de mesure (placeholder).</p>
+    </div>
+
+    <div class="navigation">
+        <a href="#section2">Précédent : Histoire du corps</a>
+        <a href="#section4">Suivant : Ce que les pas font aux individus</a>
+    </div>
 </section>
 
-<section id="limites">
-    <h2>Ce que la donnée ne dit pas</h2>
+<section id="section4">
+    <h2>Ce que les pas font aux individus : motivation, pression, identité</h2>
+    <p>Les données du pas sont utilisées dans trois sphères : Science (épidémiologie), Industrie (gamification, objectifs standardisés), et Quotidien (régulation de soi).</p>
+    
+    <p><strong>Une réalité instrumentée, non un corps :</strong> le pas comme abstraction, réduction de la complexité corporelle. Le corps idéal implicite : jeune, performant, valide = corps conçu pour et par le marché. Effets sur les subjectivités : quotidien régulé par l’objectif, santé = performance, vieillissement = échec.</p>
+
+    <div class="capsule">
+        “Le chiffre ne connaît pas la douleur, la fatigue, ni les contextes sociaux. Il connaît seulement la norme codée.”
+    </div>
+    
+    <div class="visual">
+        <img src="photo10.png" alt="Photo10 : Animation montrant des corps variés transformés en chiffres uniformisés.">
+        <p>Animation : corps variés transformés en chiffres uniformisés (placeholder).</p>
+    </div>
+
+    <h3>La motivation, la pression et la comparaison sociale</h3>
+    <p>L’accumulation de pas devient une performance visible, les chiffres deviennent nécessaires à la validation et transforme la manière dont les marcheurs se perçoivent eux-mêmes. Ces données biométriques, exige aucun degré d’intentionnalité pour être mesuré et entretient à la fois une motivation quotidienne, mais instaure aussi une logique de comparaison permanente et d’exposition de soi.</p>
+    
+    <h4>La motivation :</h4>
+    <p>Le suivi biométrique et le partage de données permettent de cultiver ou de maintenir un sentiment de connexion, ce qui peut être particulièrement précieux pour les personnes qui n’ont pas de partenaires d’entraînement [...].</p>
+    
+    <h4>La pression :</h4>
+    <p>Ces données ont tout de même leur propre vie : elles peuvent interagir, informer, et agir sur des personnes qui n’ont pourtant joué aucun rôle dans leur création. Un autre utilisateur peut utiliser ces données comme base de comparaison qui a la capacité d’influencer la manière dont les utilisateurs perçoivent leur condition physique et engendrent de la pression sociale, de l’anxiété de performance.</p>
+    
+    <div class="interlude">
+        « Je suis scrupuleusement ce que me dit de faire la montre, je préfère être motivé par elle que par un entraîneur en chair et en os. »
+    </div>
+
+    <div class="visual">
+        <img src="photo11.png" alt="Photo11 : Illustration des classements et du partage social de données.">
+        <p>Illustration des classements et du partage social de données (placeholder).</p>
+    </div>
+    
+    <h3>L'optimisation du temps et l'autorité algorithmique</h3>
+    <p>Les plateformes de suivi de l’activité comme Apple Santé, Fitbit ou Withings, orchestrent et interprètent, hiérarchisent et prescrivent, en fonction des mesures captées, ce que doit être une activité physique “normale”. Dans le cas des pas, l’objectif standard de 10 000 pas, loin d’être un consensus scientifique, illustre la manière dont une norme arbitraire peut structurer les comportements.</p>
+    
+    <div class="visual">
+        <img src="photo12.png" alt="Photo12 : Illustration de la visualisation des données (anneaux Apple, scores Fitbit).">
+        <p>Visualisation des objectifs journaliers gamifiés (Anneaux Apple, etc.) (placeholder).</p>
+    </div>
+    
+    <p>Cette dynamique favorise une discipline temporelle internalisée [...]. Par ailleurs, les objectifs quotidiens transforment la continuité d’activité en exigence morale : rater un jour devient un échec, rompre la chaîne de “streak”, une faute à réparer. Ainsi, loin de libérer du temps, les technologies du quantified self instaurent un régime où le temps devient un espace d’intervention algorithmique.</p>
+
+    <div class="interlude">
+        <p><strong>Véronique (55 ans, usagère d’une Apple Watch) :</strong> "Si je baisse l’objectif, j’ai l’impression de tricher."</p>
+        <p><strong>Nathalie Paquet (CEO, Sporty Peppers) :</strong> "Le corps est un actif : quand tu bouges avec Sporty Peppers, tu génères de la valeur. Pas pour toi, mais pour l’écosystème de la données qui est autour."</p>
+    </div>
+
+    <div class="visual">
+        <img src="photo13.png" alt="Photo13 : Illustration de la notion de 'streak' ou série de jours.">
+        <p>Illustration de la "streak" et de l'exigence morale de l'objectif (placeholder).</p>
+    </div>
+
+    <div class="navigation">
+        <a href="#section3">Précédent : Algorithmes & Biais</a>
+        <a href="#section5">Suivant : Ce que la donnée ne montre pas</a>
+    </div>
+</section>
+
+<section id="section5">
+    <h2>Ce que la donnée ne montre pas : biais, opacité et économie de la donnée</h2>
+    
+    <h3>Biais et effets sociaux</h3>
     <ul>
-        <li>Biais méthodologiques : incohérence entre algorithmes</li>
-        <li>Biais corporels : âge, genre, handicap</li>
-        <li>Effets sociaux : culpabilisation, individualisation de la santé</li>
-        <li>Effets économiques : captation de valeur, priorisation des jeunes actifs</li>
+        <li><strong>Biais méthodologiques :</strong> incohérences entre algorithmes, opacité des méthodes propriétaires.</li>
+        <li><strong>Biais corporels :</strong> âge, genre, handicap, morphologie.</li>
     </ul>
-    <div class="capsule">“Claire marche plus que jamais, mais ses pas ne comptent pas autant que ceux de ses collègues plus jeunes. La norme est codée, pas vécue.”</div>
-    <div class="visual">Infographie : sur- & sous-estimation selon âge/genre</div>
+
+    <div class="interlude">
+        <p><strong>Véronique, 55 ans :</strong> “Elle ne reconnaît pas ce que je suis aujourd’hui, j’ai limite l’impression d’être punie d’avoir vieilli.”</p>
+        <p><strong>Nathalie, CEO Sporty Peppers :</strong> “Les efforts les plus coûteux physiquement sont souvent les moins reconnus numériquement.”</p>
+    </div>
+
+    <h3>L'économie de la donnée et la gouvernance opaque</h3>
+    <p>Une fois produites, les données de pas sont immédiatement intégrées dans des infrastructures privées [...] Pour van Dijck, “les données deviennent un capital commercialisable, selon une logique typique de capitalisme de plateforme” : elles circulent dans des écosystèmes fermés où l'interopérabilité reste restreinte.</p>
+
+    <h3>Âge, genre et inégalités dans le self-tracking</h3>
+    <p>Dans le cas des technologies de comptage de pas, une sous-estimation apparaît pour les utilisateurs plus âgés (65-84 ans), et encore davantage chez les utilisateurs de moyenne âge (40-64 ans). Cela suggère que les changements de démarche liés à l'âge influencent la précision des appareils de comptage de pas, ce qui pourrait indiquer que ces appareils sont conçus pour correspondre avant tout aux corps plus jeunes.</p>
+    
+    <div class="capsule">
+        “Véronique marche plus que jamais, mais ses pas ne comptent pas autant que ceux de ses enfants. La norme est codée, pas vécue.”
+    </div>
+
+    <div class="visual">
+        
+        <p>Infographie montrant la sur- et sous-estimation de l’activité selon âge/genre.</p>
+    </div>
+
+    <div class="navigation">
+        <a href="#section4">Précédent : Usages & Pression</a>
+        <a href="#section6">Suivant : De la mesure à la norme</a>
+    </div>
 </section>
 
-<section id="realites">
-    <h2>De la mesure à la norme</h2>
-    <p>La donnée du pas représente une abstraction du corps : jeune, performant et régulier. Les corps réels, variés et irréguliers, sont invisibilisés.</p>
-    <div class="capsule">“Le chiffre ne connaît pas la douleur, la fatigue, ni les contextes sociaux. Il connaît seulement la norme codée.”</div>
-    <div class="visual">Animation : corps variés → chiffres uniformisés</div>
+<section id="section6">
+    <h2>De la mesure à la norme : corps idéalisés, performativité et gouvernementalité</h2>
+    
+    <h3>Algorithmes normatifs et anxiété mesurée</h3>
+    <ul>
+        <li><strong>Anxiété et dépendance :</strong> L’auto-mesure crée inquiétude, perte d’autonomie, méfiance envers les sensations.</li>
+        <li><strong>Autorité algorithmique :</strong> Diagnostics, classements, normes présentés comme vérités objectives.</li>
+    </ul>
+    
+    <p>Les plateformes de self-tracking utilisent le nombre de pas et participent à la création de normes corporelles standardisées, en classifiant les utilisateurs via des algorithmes composés de biais liés au genre, à l’âge ou à la morphologie [...]. Des études ont montré les effets pervers de l’auto-mesure intensive [...] celle-ci tend à générer à la fois une anxiété liée au suivi en temps réel des indicateurs corporels et une dépendance au suivi.</p>
+
+    <h3>L’auto-surveillance et l’entrepreneur de soi</h3>
+    <p>L’auto-surveillance et l’auto-discipline qui sont créées par ces outils rappellent la notion foucaldienne d’ « entrepreneur de soi ». [...] Le suivi permanent constitue une forme de biopolitique micro-temporelle. En fragmentant le flux continu de la vie en unités discrètes et optimisables [...], l'algorithme colonise la perception du temps et l'agentivité immédiate de l'individu.</p>
+    
+    <h3>Assurances, moralisation de la santé et “notation corporelle” de masse</h3>
+    <p>L’intégration des objets connectés de santé dans les dispositifs assurantiels transforme profondément les modalités de gestion du risque individuel. [...] Ces programmes récompensent les assurés qui atteignent certains objectifs mesurés, comme 10 000 pas quotidiens, [...] dans une logique qui associe gamification, auto-quantification et contrôle social.</p>
+    
+    <p>Ce basculement marque un changement de paradigme profond : du principe de mutualisation du risque [...] à celui de sélection des risques [...]. Les technologies de suivi participent ainsi à une moralisation de la santé. Ne pas atteindre ses objectifs peut être interprété comme un manquement individuel.</p>
+
+    <div class="visual">
+        
+        <p>Schéma : Gouvernementalité algorithmique, assurance comportementale et notation corporelle.</p>
+    </div>
+
+    <div class="navigation">
+        <a href="#section5">Précédent : Biais & Opacité</a>
+        <a href="#section7">Suivant : Résister à la norme</a>
+    </div>
 </section>
 
-<section id="discussion">
+<section id="section7">
+    <h2>Résister à la norme : déconnexion, détournement et réappropriation</h2>
+    
+    <h3>Le non-tracking comme acte de résistance</h3>
+    <p>Ne pas utiliser de dispositifs de self-tracking peut être vu comme un acte de résistance, un moyen de se défaire des normes numériques et de reconquérir l’autonomie corporelle.</p>
+    
+    <div class="visual">
+        <img src="image_non_connecte.png" alt="Photographie montrant une personne en mouvement (coureur, randonneur, méditant) sans montre connectée au poignet.">
+        <p>Photographie montrant une personne en mouvement sans montre connectée.</p>
+    </div>
+
+    <div class="interlude">
+        Le marathonien David Gleisner raconte que la principale leçon qu’il en tire est la nécessité de <strong>“faire confiance à son intuition”</strong>.
+    </div>
+    
+    <h3>Façons de résister : Un spectre d’actions</h3>
+    <p>On peut cartographier ces résistances sur un spectre. D'un côté, le refus ou la sortie (le « déconnexionnisme »). À l'autre extrémité, des pratiques plus actives de détournement tactique et de piratage du système sont le « data poisoning » ou l'usage ironique en sont des formes. Une troisième voie émerge, celle de l'activisme des données ou la réappropriation.</p>
+    
+    <div class="visual">
+        
+        <p>Schéma du spectre des résistances : Déconnexionnisme – Réappropriation – Data Poisoning.</p>
+    </div>
+    
+    <h3>Ambivalence et récupération</h3>
+    <p>L’ironie réside dans le fait que ces discours critiques sont publiés sur des plateformes [...] dont l’économie repose en partie sur la publicité pour des montres Garmin, témoignant ainsi de l’ambivalence structurelle du champ sportif contemporain : la critique de la quantification coexiste avec sa marchandisation.</p>
+    
+    <div class="visual">
+        <img src="capture_ecran_critique.png" alt="Capture d'écran d'un site de sport avec un titre critique sur le self-tracking, à côté d'une grande publicité pour une montre Garmin.">
+        <p>Capture d'écran : Critique du self-tracking à côté d’une publicité pour montre connectée.</p>
+    </div>
+
+    <div class="navigation">
+        <a href="#section6">Précédent : Gouvernementalité</a>
+        <a href="#section8">Suivant : Quelles leçons tirer ?</a>
+    </div>
+</section>
+
+<section id="section8">
     <h2>Quelles leçons tirer ?</h2>
+    
     <ul>
-        <li>La donnée du pas fabrique une norme sociale et économique</li>
-        <li>Effets : auto-surveillance, marchandisation du corps, hiérarchisation sociale</li>
-        <li>Théories mobilisées : Foucault, Lupton, Ruckenstein, Crawford, Schüll</li>
+        <li>La donnée du pas fabrique une norme sociale et économique.</li>
+        <li>Effets : auto-surveillance, marchandisation du corps, hiérarchisation sociale.</li>
     </ul>
-    <div class="capsule">“Le corps devient performatif pour l’algorithme. Mais et si on redéfinissait la santé pour tous les corps, pas pour un chiffre ?”</div>
-    <div class="visual">Schéma synthétique : algorithme → corps → société</div>
+
+    <div class="capsule">
+        “Le corps devient performatif pour l’algorithme. Mais et si on redéfinissait la santé pour tous les corps, pas pour un chiffre ?”
+    </div>
+    
+    <div class="visual">
+        
+        <p>Schéma synthétique : "De l’algorithme au corps à la société".</p>
+    </div>
+
+    <p>La donnée du pas apparaît, au terme de ce parcours, comme bien plus qu’un indicateur d’activité. Elle constitue un dispositif de normalisation qui façonne à la fois les comportements individuels, les rapports sociaux et les logiques économiques des plateformes.</p>
+
+    <h3>Le pas : Une triade de conséquences</h3>
+    
+    <p><strong>1. Sur le plan individuel :</strong> La mesure quotidienne introduit une forme d’auto-surveillance qui structure les gestes les plus ordinaires. La santé se confond alors avec la capacité à atteindre l’objectif, et l’évaluation de soi dépend d’une métrique qui ne dit rien des contextes, des contraintes ni des corps qui échappent à la standardisation.</p>
+    
+    <p><strong>2. Sur le plan social :</strong> Le comptage de pas installe des hiérarchies discrètes entre jeunes et âgés, valides et invalidés, connectés et non-connectés. [...] L’individualisation du risque et la moralisation des comportements transforment la marche [...] en vecteur de distinction et parfois d’exclusion.</p>
+    
+    <p><strong>3. Sur le plan économique :</strong> La donnée du pas alimente une économie où le corps devient une ressource valorisable. [...] Cette circulation transforme l’activité physique en matière première d’un capitalisme de plateforme, dans lequel la valeur ne revient pas à l’utilisateur mais à l’écosystème technique qui l’entoure. Marcher, c’est aussi produire.</p>
+
+    <div class="navigation">
+        <a href="#section7">Précédent : Résister à la norme</a>
+        <a href="#section8">Haut de page</a>
+    </div>
 </section>
 
 <section id="ressources">
     <h2>Ressources et bibliographie</h2>
+    
+    <div class="visual">
+        <p><strong>L’illusion d’un contrôle total :</strong> Fiore-Gartland & Neff (2015), Technologies de gestion du temps.</p>
+        <p><strong>Performativité du chiffre :</strong> Théorie socio-technique sur la manière dont les métriques ne décrivent pas la réalité mais la construisent.</p>
+        <p><strong>Gouvernementalité :</strong> Foucault, Michel (1975) et (1977-1978). Technologies de pouvoir.</p>
+    </div>
+    
     <ul>
-        <li>NHANES – CDC</li>
-        <li>Publications académiques sur self-tracking et activité physique</li>
-        <li>Déborah Lupton, Minna Ruckenstein, Kate Crawford</li>
-        <li>Articles et analyses sur la quantification du corps</li>
+        <li>Foucault, Michel (1975), <em>Surveiller et Punir. Naissance de la prison</em>, Gallimard.</li>
+        <li>Rohlinger, Deana A. (2019), <em>The Sociology of Self-Tracking and Embodied Technologies</em>, Routledge.</li>
+        <li>Festic, Latzer & Smirnova (2021), Algorithmic Selection and Social Visibility in Fitness Apps.</li>
+        <li>Le Guiniec, R. (2023), Corps, genre et performance dans les technologies du sport.</li>
+        <li>Boldi, I. et al. (2024), Gendered Norms in Self-Tracking Platforms, Journal of Digital Health.</li>
+        <li>Lyon, David (2018), Surveillance Society: Monitoring Everyday Life, Polity Press.</li>
+        <li>NHANES – CDC : Base de données.</li>
     </ul>
-    <div class="visual">Encadré interactif : liens externes cliquables</div>
+    
+    <div class="navigation">
+        <a href="#section8">Précédent : Leçons à tirer</a>
+        <a href="#section1">Accueil</a>
+    </div>
 </section>
 
+</main>
+
 <footer>
-    &copy; 2025 – Étude sur le self-tracking et quantification du pas | Crédits : Étudiantes de Sciences Po
+    &copy; 2025 – Étude sur le self-tracking et quantification du pas | Projet Charte Graphique et UX
 </footer>
 
 </body>
