@@ -125,30 +125,11 @@
             max-width: 100%;
             height: auto;
             border-radius: 8px;
-            margin-bottom: 10px;
+            margin-bottom: 0; /* Suppression de la marge sous l'image */
         }
         
-        /* Styles pour les boutons Précédent/Suivant */
-        .navigation {
-            display: flex;
-            justify-content: space-between;
-            margin-top: 40px;
-            padding-top: 20px;
-            border-top: 1px solid #ccc;
-        }
-        .navigation a {
-            background-color: #5DADE2;
-            color: white;
-            padding: 10px 20px;
-            text-decoration: none;
-            border-radius: 5px;
-            font-family: 'Montserrat', sans-serif;
-            font-weight: 600;
-        }
-        .navigation a:hover {
-            background-color: #4a9ad0;
-        }
-        
+        /* Suppression des styles pour les boutons Précédent/Suivant, car les blocs sont supprimés. */
+
         /* Mise en forme des listes spécifiques */
         ul { margin-left: 20px; margin-bottom: 1em; }
         li { margin-bottom: 0.5em; }
@@ -199,12 +180,10 @@
 
     <div class="visual">
         <img src="image_montre_connectee.png" alt="Image stylisée d’une montre connectée avec un anneau d’activité à moitié rempli.">
-        <p>Image stylisée d’une montre connectée avec un anneau d’activité à moitié rempli.</p>
     </div>
     
     <div class="visual">
         <img src="photo1.png" alt="Photo1 : Illustration de la quantification des corps.">
-        <p>Photo1 : Illustration de la quantification des corps (placeholder).</p>
     </div>
 
     <p>Depuis une dizaine d’années, la quantification des corps s’est imposée comme une pratique quotidienne pour une part croissante de la population. Déjà en 2019, 4 Français sur 10 déclaraient “utiliser des objets connectés ou des applications dans le cadre de leurs activités sportives”, signe d’un marché en pleine expansion. [...] Cette prolifération s’accompagne d’un discours puissant : “s’entraîner comme un pro”, optimiser sa forme, prévenir les risques, devenir acteur de sa santé. Le marché mondial des applications de santé, estimé à “12,4 milliards de dollars en 2018 et annoncé à plus de 200 milliards en 2026”, s’appuie sur ces promesses.</p>
@@ -214,10 +193,6 @@
     <h3>Le dispositif NHANES</h3>
     <p>Notre étude s’appuie sur un jeu de données issu de NHANES (National Health and Nutrition Examination Survey), un programme mené par les Centers for Disease Control and Prevention (CDC) aux États-Unis depuis la fin des années 1950. [...] Dans les cycles 2011‑2012 et 2013‑2014, NHANES a intégré la collecte d’accéléromètres portés par les participants, afin de mesurer leur activité physique de manière objective.</p>
     
-    <div class="navigation">
-        <span></span>
-        <a href="#section2">Suivant : Dispositif NHANES & Histoire du corps</a>
-    </div>
 </section>
 
 <section id="section2">
@@ -236,7 +211,6 @@
 
     <div class="visual">
         <img src="photo2.png" alt="Photo2 : Graphique animé montrant un accéléromètre qui transforme la marche en données numériques.">
-        <p>Graphique animé : transformation accéléromètre → données numériques (placeholder).</p>
     </div>
     
     <h3>1. Aux origines : Mesurer le monde (Antiquité - XIXe siècle)</h3>
@@ -244,7 +218,6 @@
     
     <div class="visual">
         <img src="photo3.png" alt="Photo3 : Illustration d’un podomètre ancien ou d’un odomètre.">
-        <p>Photo3 : Odomètre ou podomètre du XVIe siècle (placeholder).</p>
     </div>
 
     <h3>2. Le XIXe siècle : Discipliner le corps (Médecine et Hygiène)</h3>
@@ -252,7 +225,6 @@
     
     <div class="visual">
         <img src="photo4.png" alt="Photo4 : Illustration d’une scène médicale ou hygiéniste du XIXe siècle.">
-        <p>Photo4 : Usage médical du podomètre au XIXe siècle (placeholder).</p>
     </div>
     
     <h3>3. Aujourd'hui : Le corps capital à optimiser (Quantified Self)</h3>
@@ -260,13 +232,8 @@
     
     <div class="visual">
         <img src="photo5.png" alt="Photo5 : Illustration du mouvement Quantified Self.">
-        <p>Photo5 : Illustration des données et du partage social (placeholder).</p>
     </div>
 
-    <div class="navigation">
-        <a href="#section1">Précédent : Le Pas & NHANES</a>
-        <a href="#section3">Suivant : Comment les pas sont comptés ?</a>
-    </div>
 </section>
 
 <section id="section3">
@@ -275,7 +242,6 @@
 
     <div class="visual">
         <img src="photo6.png" alt="Photo6 : Schéma de l’écosystème technique de comptage de pas.">
-        <p>Schéma de l’écosystème des technologies de comptage (capteurs, algorithmes, plateformes) (placeholder).</p>
     </div>
 
     <h3>Biais d’infrastructure et invisibilisation des corps</h3>
@@ -288,12 +254,10 @@
 
     <div class="visual">
         <img src="photo7.png" alt="Photo7 : Exemple de publicité pour une montre connectée montrant explicitement un corps masculin et en bonne santé.">
-        <p>Publicité : montre connectée sur un corps masculin, jeune et en bonne santé (placeholder).</p>
     </div>
     
     <div class="visual">
         <img src="photo8.png" alt="Photo8 : Schéma illustrant la mesure des pas sur un corps "atypique" versus "normatif".">
-        <p>Schéma : comparaison de la détection des pas selon la morphologie ou l'âge (placeholder).</p>
     </div>
 
     <h3>Catégories statistiques et production d’identités corporelles</h3>
@@ -305,21 +269,11 @@
     <div class="capsule">
         “Mathieu, 70 ans, marche avec effort. La montre détecte moins de pas que ses jambes ne le font. Ses efforts disparaissent dans le flux numérique.”
     </div>
-
-    <div class="visual">
-        
-        <p>Schéma comparatif des algorithmes ActiGraph appliqués aux mêmes données brutes NHANES.</p>
-    </div>
     
     <div class="visual">
         <img src="photo9.png" alt="Photo9 : Illustration du biais d’infrastructure.">
-        <p>Photo9 : Illustration des biais de mesure (placeholder).</p>
     </div>
 
-    <div class="navigation">
-        <a href="#section2">Précédent : Histoire du corps</a>
-        <a href="#section4">Suivant : Ce que les pas font aux individus</a>
-    </div>
 </section>
 
 <section id="section4">
@@ -334,7 +288,6 @@
     
     <div class="visual">
         <img src="photo10.png" alt="Photo10 : Animation montrant des corps variés transformés en chiffres uniformisés.">
-        <p>Animation : corps variés transformés en chiffres uniformisés (placeholder).</p>
     </div>
 
     <h3>La motivation, la pression et la comparaison sociale</h3>
@@ -352,7 +305,6 @@
 
     <div class="visual">
         <img src="photo11.png" alt="Photo11 : Illustration des classements et du partage social de données.">
-        <p>Illustration des classements et du partage social de données (placeholder).</p>
     </div>
     
     <h3>L'optimisation du temps et l'autorité algorithmique</h3>
@@ -360,7 +312,6 @@
     
     <div class="visual">
         <img src="photo12.png" alt="Photo12 : Illustration de la visualisation des données (anneaux Apple, scores Fitbit).">
-        <p>Visualisation des objectifs journaliers gamifiés (Anneaux Apple, etc.) (placeholder).</p>
     </div>
     
     <p>Cette dynamique favorise une discipline temporelle internalisée [...]. Par ailleurs, les objectifs quotidiens transforment la continuité d’activité en exigence morale : rater un jour devient un échec, rompre la chaîne de “streak”, une faute à réparer. Ainsi, loin de libérer du temps, les technologies du quantified self instaurent un régime où le temps devient un espace d’intervention algorithmique.</p>
@@ -372,13 +323,8 @@
 
     <div class="visual">
         <img src="photo13.png" alt="Photo13 : Illustration de la notion de 'streak' ou série de jours.">
-        <p>Illustration de la "streak" et de l'exigence morale de l'objectif (placeholder).</p>
     </div>
 
-    <div class="navigation">
-        <a href="#section3">Précédent : Algorithmes & Biais</a>
-        <a href="#section5">Suivant : Ce que la donnée ne montre pas</a>
-    </div>
 </section>
 
 <section id="section5">
@@ -405,16 +351,7 @@
         “Véronique marche plus que jamais, mais ses pas ne comptent pas autant que ceux de ses enfants. La norme est codée, pas vécue.”
     </div>
 
-    <div class="visual">
-        
-        <p>Infographie montrant la sur- et sous-estimation de l’activité selon âge/genre.</p>
-    </div>
-
-    <div class="navigation">
-        <a href="#section4">Précédent : Usages & Pression</a>
-        <a href="#section6">Suivant : De la mesure à la norme</a>
-    </div>
-</section>
+    </section>
 
 <section id="section6">
     <h2>De la mesure à la norme : corps idéalisés, performativité et gouvernementalité</h2>
@@ -435,16 +372,7 @@
     
     <p>Ce basculement marque un changement de paradigme profond : du principe de mutualisation du risque [...] à celui de sélection des risques [...]. Les technologies de suivi participent ainsi à une moralisation de la santé. Ne pas atteindre ses objectifs peut être interprété comme un manquement individuel.</p>
 
-    <div class="visual">
-        
-        <p>Schéma : Gouvernementalité algorithmique, assurance comportementale et notation corporelle.</p>
-    </div>
-
-    <div class="navigation">
-        <a href="#section5">Précédent : Biais & Opacité</a>
-        <a href="#section7">Suivant : Résister à la norme</a>
-    </div>
-</section>
+    </section>
 
 <section id="section7">
     <h2>Résister à la norme : déconnexion, détournement et réappropriation</h2>
@@ -454,7 +382,6 @@
     
     <div class="visual">
         <img src="image_non_connecte.png" alt="Photographie montrant une personne en mouvement (coureur, randonneur, méditant) sans montre connectée au poignet.">
-        <p>Photographie montrant une personne en mouvement sans montre connectée.</p>
     </div>
 
     <div class="interlude">
@@ -464,23 +391,13 @@
     <h3>Façons de résister : Un spectre d’actions</h3>
     <p>On peut cartographier ces résistances sur un spectre. D'un côté, le refus ou la sortie (le « déconnexionnisme »). À l'autre extrémité, des pratiques plus actives de détournement tactique et de piratage du système sont le « data poisoning » ou l'usage ironique en sont des formes. Une troisième voie émerge, celle de l'activisme des données ou la réappropriation.</p>
     
-    <div class="visual">
-        
-        <p>Schéma du spectre des résistances : Déconnexionnisme – Réappropriation – Data Poisoning.</p>
-    </div>
-    
     <h3>Ambivalence et récupération</h3>
     <p>L’ironie réside dans le fait que ces discours critiques sont publiés sur des plateformes [...] dont l’économie repose en partie sur la publicité pour des montres Garmin, témoignant ainsi de l’ambivalence structurelle du champ sportif contemporain : la critique de la quantification coexiste avec sa marchandisation.</p>
     
     <div class="visual">
         <img src="capture_ecran_critique.png" alt="Capture d'écran d'un site de sport avec un titre critique sur le self-tracking, à côté d'une grande publicité pour une montre Garmin.">
-        <p>Capture d'écran : Critique du self-tracking à côté d’une publicité pour montre connectée.</p>
     </div>
 
-    <div class="navigation">
-        <a href="#section6">Précédent : Gouvernementalité</a>
-        <a href="#section8">Suivant : Quelles leçons tirer ?</a>
-    </div>
 </section>
 
 <section id="section8">
@@ -495,11 +412,6 @@
         “Le corps devient performatif pour l’algorithme. Mais et si on redéfinissait la santé pour tous les corps, pas pour un chiffre ?”
     </div>
     
-    <div class="visual">
-        
-        <p>Schéma synthétique : "De l’algorithme au corps à la société".</p>
-    </div>
-
     <p>La donnée du pas apparaît, au terme de ce parcours, comme bien plus qu’un indicateur d’activité. Elle constitue un dispositif de normalisation qui façonne à la fois les comportements individuels, les rapports sociaux et les logiques économiques des plateformes.</p>
 
     <h3>Le pas : Une triade de conséquences</h3>
@@ -510,20 +422,10 @@
     
     <p><strong>3. Sur le plan économique :</strong> La donnée du pas alimente une économie où le corps devient une ressource valorisable. [...] Cette circulation transforme l’activité physique en matière première d’un capitalisme de plateforme, dans lequel la valeur ne revient pas à l’utilisateur mais à l’écosystème technique qui l’entoure. Marcher, c’est aussi produire.</p>
 
-    <div class="navigation">
-        <a href="#section7">Précédent : Résister à la norme</a>
-        <a href="#section8">Haut de page</a>
-    </div>
 </section>
 
 <section id="ressources">
     <h2>Ressources et bibliographie</h2>
-    
-    <div class="visual">
-        <p><strong>L’illusion d’un contrôle total :</strong> Fiore-Gartland & Neff (2015), Technologies de gestion du temps.</p>
-        <p><strong>Performativité du chiffre :</strong> Théorie socio-technique sur la manière dont les métriques ne décrivent pas la réalité mais la construisent.</p>
-        <p><strong>Gouvernementalité :</strong> Foucault, Michel (1975) et (1977-1978). Technologies de pouvoir.</p>
-    </div>
     
     <ul>
         <li>Foucault, Michel (1975), <em>Surveiller et Punir. Naissance de la prison</em>, Gallimard.</li>
@@ -535,10 +437,6 @@
         <li>NHANES – CDC : Base de données.</li>
     </ul>
     
-    <div class="navigation">
-        <a href="#section8">Précédent : Leçons à tirer</a>
-        <a href="#section1">Accueil</a>
-    </div>
 </section>
 
 </main>
