@@ -103,33 +103,20 @@
             font-weight: 600;
         }
 
-        /* --- 4. Visual placeholders & Images (UX : Encarts visuels) --- */
-        .visual { 
-            width:100%; 
-            min-height:300px; 
-            background:rgba(93, 173, 226, 0.1); /* Fond très léger de bleu */
-            border: 1px solid #5DADE2;
-            border-radius:10px; 
-            display:flex; 
-            flex-direction: column;
-            justify-content:center; 
-            align-items:center; 
-            color:#212F3C; 
-            font-weight:700; 
-            margin:20px 0; 
-            padding: 15px;
+        /* --- 4. Images (Styles pour les balises IMG simples) --- */
+        .image-container {
+            margin: 20px 0;
             text-align: center;
         }
-        
-        .visual img {
+
+        .image-container img {
             max-width: 100%;
             height: auto;
             border-radius: 8px;
-            margin-bottom: 0; /* Suppression de la marge sous l'image */
+            display: block;
+            margin: 0 auto;
         }
         
-        /* Suppression des styles pour les boutons Précédent/Suivant, car les blocs sont supprimés. */
-
         /* Mise en forme des listes spécifiques */
         ul { margin-left: 20px; margin-bottom: 1em; }
         li { margin-bottom: 0.5em; }
@@ -178,11 +165,11 @@
         “Chaque matin, Véronique, 55 ans, regarde son Apple Watch. Ses 10 000 pas semblent simples à atteindre… mais son corps la trahit. La montre ignore ses pauses, sa fatigue, et lui renvoie un verdict : insuffisant.”
     </div>
 
-    <div class="visual">
+    <div class="image-container">
         <img src="image_montre_connectee.png" alt="Image stylisée d’une montre connectée avec un anneau d’activité à moitié rempli.">
     </div>
     
-    <div class="visual">
+    <div class="image-container">
         <img src="photo1.png" alt="Photo1 : Illustration de la quantification des corps.">
     </div>
 
@@ -209,28 +196,28 @@
         “En laboratoire, des participants marchent sur tapis. Leurs mouvements deviennent des chiffres, puis des graphiques. Mais qui a décidé que cette foulée “standard” représenterait tout le monde ?”
     </div>
 
-    <div class="visual">
+    <div class="image-container">
         <img src="photo2.png" alt="Photo2 : Graphique animé montrant un accéléromètre qui transforme la marche en données numériques.">
     </div>
     
     <h3>1. Aux origines : Mesurer le monde (Antiquité - XIXe siècle)</h3>
     <p>Aux origines, la quantification ne s'intéresse pas directement à l’individu : elle sert d’abord à mesurer le monde. L’odomètre inventé dans l’Antiquité ou le podomètre développé au XVIᵉ siècle étaient pensés pour géométriser le déplacement humain. [...] Le « pas d’un homme moyen » n’a rien à voir avec la santé : il sert uniquement à convertir la marche en distance mesurable. Le corps n’a alors pas d’identité propre : il n’est qu’un outil mécanique anonymisé.</p>
     
-    <div class="visual">
+    <div class="image-container">
         <img src="photo3.png" alt="Photo3 : Illustration d’un podomètre ancien ou d’un odomètre.">
     </div>
 
     <h3>2. Le XIXe siècle : Discipliner le corps (Médecine et Hygiène)</h3>
     <p>Cette logique change au XIXᵉ siècle lorsque la médecine s’empare de ces instruments de mesure. Le podomètre devient un support de rationalisation du corps : les médecins et hygiénistes l’utilisent pour organiser et contrôler l’activité physique des patients. Pour la première fois, la mesure sert à discipliner et réguler le corps humain.</p>
     
-    <div class="visual">
+    <div class="image-container">
         <img src="photo4.png" alt="Photo4 : Illustration d’une scène médicale ou hygiéniste du XIXe siècle.">
     </div>
     
     <h3>3. Aujourd'hui : Le corps capital à optimiser (Quantified Self)</h3>
     <p>La dernière transformation se produit dans nos sociétés contemporaines. Avec l’émergence du mouvement Quantified Self dans les années 1990, et la diffusion massive des objets connectés, chacun peut désormais mesurer son sommeil, ses pas, son rythme cardiaque... Le corps devient un capital à gérer, améliorer et optimiser. [...] En parallèle, la dimension sociale de ces données joue un rôle central. Les plateformes où l’on partage ses performances favorisent la comparaison, la valorisation des efforts et l’installation d’une dynamique de compétition continue.</p>
     
-    <div class="visual">
+    <div class="image-container">
         <img src="photo5.png" alt="Photo5 : Illustration du mouvement Quantified Self.">
     </div>
 
@@ -240,7 +227,7 @@
     <h2>Comment les pas sont comptés ? Technologies, algorithmes et biais</h2>
     <p>Les données brutes des accéléromètres sont transformées par 6 algorithmes différents (5 open-source, 1 propriétaire – ActiLife). Chacun produit des mesures légèrement différentes.</p>
 
-    <div class="visual">
+    <div class="image-container">
         <img src="photo6.png" alt="Photo6 : Schéma de l’écosystème technique de comptage de pas.">
     </div>
 
@@ -252,11 +239,11 @@
     
     <p>En premier lieu, les capteurs (GPS, accéléromètre et gyroscope) produisent des mesures dont la précision dépend des conditions d’usage. Ils ne capturent pas la singularité de chaque corps, ce qui mène à une approximation fondée sur des seuils, des moyennes et des algorithmes d’interprétation. [...] Aimé Muhoza rappelle que la conception de ces dispositifs privilégie les corps jeunes et en bonne santé : “la plupart des dispositifs disponibles sur le marché sont conçus pour des personnes en bonne santé ou des athlètes”.</p>
 
-    <div class="visual">
+    <div class="image-container">
         <img src="photo7.png" alt="Photo7 : Exemple de publicité pour une montre connectée montrant explicitement un corps masculin et en bonne santé.">
     </div>
     
-    <div class="visual">
+    <div class="image-container">
         <img src="photo8.png" alt="Photo8 : Schéma illustrant la mesure des pas sur un corps "atypique" versus "normatif".">
     </div>
 
@@ -270,7 +257,7 @@
         “Mathieu, 70 ans, marche avec effort. La montre détecte moins de pas que ses jambes ne le font. Ses efforts disparaissent dans le flux numérique.”
     </div>
     
-    <div class="visual">
+    <div class="image-container">
         <img src="photo9.png" alt="Photo9 : Illustration du biais d’infrastructure.">
     </div>
 
@@ -286,7 +273,7 @@
         “Le chiffre ne connaît pas la douleur, la fatigue, ni les contextes sociaux. Il connaît seulement la norme codée.”
     </div>
     
-    <div class="visual">
+    <div class="image-container">
         <img src="photo10.png" alt="Photo10 : Animation montrant des corps variés transformés en chiffres uniformisés.">
     </div>
 
@@ -303,14 +290,14 @@
         « Je suis scrupuleusement ce que me dit de faire la montre, je préfère être motivé par elle que par un entraîneur en chair et en os. »
     </div>
 
-    <div class="visual">
+    <div class="image-container">
         <img src="photo11.png" alt="Photo11 : Illustration des classements et du partage social de données.">
     </div>
     
     <h3>L'optimisation du temps et l'autorité algorithmique</h3>
     <p>Les plateformes de suivi de l’activité comme Apple Santé, Fitbit ou Withings, orchestrent et interprètent, hiérarchisent et prescrivent, en fonction des mesures captées, ce que doit être une activité physique “normale”. Dans le cas des pas, l’objectif standard de 10 000 pas, loin d’être un consensus scientifique, illustre la manière dont une norme arbitraire peut structurer les comportements.</p>
     
-    <div class="visual">
+    <div class="image-container">
         <img src="photo12.png" alt="Photo12 : Illustration de la visualisation des données (anneaux Apple, scores Fitbit).">
     </div>
     
@@ -321,7 +308,7 @@
         <p><strong>Nathalie Paquet (CEO, Sporty Peppers) :</strong> "Le corps est un actif : quand tu bouges avec Sporty Peppers, tu génères de la valeur. Pas pour toi, mais pour l’écosystème de la données qui est autour."</p>
     </div>
 
-    <div class="visual">
+    <div class="image-container">
         <img src="photo13.png" alt="Photo13 : Illustration de la notion de 'streak' ou série de jours.">
     </div>
 
@@ -338,7 +325,7 @@
 
     <div class="interlude">
         <p><strong>Véronique, 55 ans :</strong> “Elle ne reconnaît pas ce que je suis aujourd’hui, j’ai limite l’impression d’être punie d’avoir vieilli.”</p>
-        <p><strong>Nathalie, CEO Sporty Peppers :</strong> “Les efforts les plus coûteux physiquement sont souvent les moins reconnus numériquement.”</p>
+        <p><strong>Nathalie, CEO Sporty Peppers) :</strong> “Les efforts les plus coûteux physiquement sont souvent les moins reconnus numériquement.”</p>
     </div>
 
     <h3>L'économie de la donnée et la gouvernance opaque</h3>
@@ -351,7 +338,7 @@
         “Véronique marche plus que jamais, mais ses pas ne comptent pas autant que ceux de ses enfants. La norme est codée, pas vécue.”
     </div>
 
-    </section>
+</section>
 
 <section id="section6">
     <h2>De la mesure à la norme : corps idéalisés, performativité et gouvernementalité</h2>
@@ -372,7 +359,7 @@
     
     <p>Ce basculement marque un changement de paradigme profond : du principe de mutualisation du risque [...] à celui de sélection des risques [...]. Les technologies de suivi participent ainsi à une moralisation de la santé. Ne pas atteindre ses objectifs peut être interprété comme un manquement individuel.</p>
 
-    </section>
+</section>
 
 <section id="section7">
     <h2>Résister à la norme : déconnexion, détournement et réappropriation</h2>
@@ -380,7 +367,7 @@
     <h3>Le non-tracking comme acte de résistance</h3>
     <p>Ne pas utiliser de dispositifs de self-tracking peut être vu comme un acte de résistance, un moyen de se défaire des normes numériques et de reconquérir l’autonomie corporelle.</p>
     
-    <div class="visual">
+    <div class="image-container">
         <img src="image_non_connecte.png" alt="Photographie montrant une personne en mouvement (coureur, randonneur, méditant) sans montre connectée au poignet.">
     </div>
 
@@ -394,7 +381,7 @@
     <h3>Ambivalence et récupération</h3>
     <p>L’ironie réside dans le fait que ces discours critiques sont publiés sur des plateformes [...] dont l’économie repose en partie sur la publicité pour des montres Garmin, témoignant ainsi de l’ambivalence structurelle du champ sportif contemporain : la critique de la quantification coexiste avec sa marchandisation.</p>
     
-    <div class="visual">
+    <div class="image-container">
         <img src="capture_ecran_critique.png" alt="Capture d'écran d'un site de sport avec un titre critique sur le self-tracking, à côté d'une grande publicité pour une montre Garmin.">
     </div>
 
